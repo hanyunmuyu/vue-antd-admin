@@ -1,24 +1,3 @@
-# vue-antd-admin
+# [动态渲染菜单图标](https://segmentfault.com/a/1190000038704028)
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# [动态权限](https://blog.csdn.net/qq_32340877/article/details/79416344)

@@ -9,12 +9,14 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import {defineComponent, PropType} from "vue";
 import {message} from "ant-design-vue";
+import {deleteRoleById} from "@/api/role";
+import {IRole} from "@/pages/role/IRole";
 
 export default defineComponent({
   props: {
-    role: Object,
+    role: Object as PropType<IRole>,
   },
   emits: ['deleteRole'],
   setup(props, ctx) {
@@ -22,8 +24,17 @@ export default defineComponent({
       message.info('取消删除')
     }
     const deleteRole = () => {
-      ctx.emit('deleteRole', props.role)
-      message.success('删除成功')
+      if (props.role) {
+        deleteRoleById(props.role.id as number).then(response => {
+          const {code, msg} = response.data
+          if (code === 1) {
+            message.error(msg)
+          } else {
+            message.success('删除成功')
+            ctx.emit('deleteRole', props.role)
+          }
+        })
+      }
     }
     return {
       cancelDeleteRole,

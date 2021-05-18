@@ -67,6 +67,7 @@ export default defineComponent({
     const route = useRouter()
     const handleFinish = (values: FormState) => {
       login(values).then(response => {
+        console.log(response)
         const {code, msg} = response.data
         if (code === 1) {
           message.error(msg)

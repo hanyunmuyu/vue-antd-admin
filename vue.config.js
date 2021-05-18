@@ -1,3 +1,4 @@
 module.exports = {
-    publicPath: '/ue-antd-admin-page/',
+    publicPath: process.env.NODE_ENV === 'development' ?
+        '' : '/vue-antd-admin-page/',
 };

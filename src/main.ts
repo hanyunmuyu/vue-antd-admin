@@ -4,7 +4,10 @@ import Antd from 'ant-design-vue';
 import * as antIcons from '@ant-design/icons-vue'
 import 'ant-design-vue/dist/antd.css';
 import router from './router';
-
+if (process.env.NODE_ENV === 'development') {
+    const { mockXHR } = require('../mock')
+    mockXHR()
+}
 const app = createApp(App)
 Object.keys(antIcons).forEach(key => {
     // @ts-ignore

@@ -2,7 +2,7 @@ import request from "@/utils/request";
 
 export const login = (data: any) => {
     return request({
-        url: '/login',
+        url: '/admin/login',
         method: 'post',
         data: data
     })

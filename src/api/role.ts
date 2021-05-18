@@ -6,3 +6,10 @@ export const getRoleList = (page: number = 1) => {
         params: {page: page}
     })
 }
+
+export const deleteRoleById = (roleId: number) => {
+    return request({
+        url: '/admin/role/' + roleId,
+        method: 'delete'
+    })
+}

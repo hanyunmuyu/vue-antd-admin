@@ -3,7 +3,7 @@ import {message, Modal} from 'ant-design-vue';
 import {clear, get} from "./storage";
 // create an axios instance
 const service = axios.create({
-    baseURL: process.env.VUE_APP_API_DOMAIN, // url = base url + request url
+    baseURL: process.env.NODE_ENV === 'development' ?'/':process.env.VUE_APP_API_DOMAIN, // url = base url + request url
     // withCredentials: true, // send cookies when cross-domain requests
     timeout: 5000 // request timeout
 })
